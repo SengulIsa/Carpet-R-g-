@@ -1,0 +1,35 @@
+﻿@model MvcStok.Models.Entity.TBLURUNLER
+@{
+    ViewBag.Title = "YeniÜrün";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<form class="form-group" method="post">
+    <div>
+        <label>PRODUCT NAME</label>
+        <input type="text" class="form-control" name="URUNAD" required="" maxlength="30" placeholder="ADD PRODUCT NAME...(max. 50 character)" />
+    </div>
+    <div>
+        <label>CHOOSE PRODUCT CATEGORY</label>
+        @Html.DropDownListFor(m => m.TBLCATEGORILER.CATEGORIID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>PRICE</label>
+        <input type="text" class="form-control" name="FIYAT" required="" placeholder="ENTER PRICE..." />
+    </div>
+    <div>
+        <label>STOCK</label>
+        <input type="text" class="form-control" name="STOK" required="" placeholder="ENTER THE STOCK AMOUNT..." />
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info" id="btn2">ADD PRODUCT</button>
+    </div>
+    <script>
+    $('#btn2').click(function(){
+        alert('ADDED NEW PRODUCT SUCCESFULLY...!');
+    });
+
+    </script>
+
+</form>
+
+
